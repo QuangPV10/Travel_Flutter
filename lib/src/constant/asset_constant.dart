@@ -1,6 +1,6 @@
 const String imagePath = 'assets/images/';
 const String backgroundSplashImg = '${imagePath}background_splash.png';
-const String circleImg = '${imagePath}circle.png';
+const String circleImg = '${imagePath}circle_splash.png';
 const String dubaiImg = '${imagePath}dubai.png';
 const String hotelScreenImg = '${imagePath}hotel_screen.png';
 const String hotel1Img = '${imagePath}hotel1.png';

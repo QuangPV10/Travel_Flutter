@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ImageHelper {
-  Widget loadFormAsset(
+  static Widget loadFormAsset(
     String imagePath, {
     double? width,
     double? height,
