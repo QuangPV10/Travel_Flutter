@@ -18,7 +18,7 @@ const String slide2Img = '${imagePath}slide2.png';
 const String slide3Img = '${imagePath}slide3.png';
 const String turkeyImg = '${imagePath}turkey.png';
 
-const String iconPath = 'assets/images/';
+const String iconPath = 'assets/icons/';
 const String iconBed = '${iconPath}ico_bed.png';
 const String iconBreakfast = '${imagePath}breakfast.png';
 const String iconCalendal = '${imagePath}ico_calendal.png';
