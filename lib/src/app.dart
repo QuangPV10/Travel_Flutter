@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:travel_ui_200lab/src/constant/color_constant.dart';
 import 'package:travel_ui_200lab/src/screens/splash_screen.dart';
 
@@ -7,6 +8,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
     return MaterialApp(
       title: 'Travel App',
       theme: ThemeData(
