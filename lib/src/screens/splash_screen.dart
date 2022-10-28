@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:travel_ui_200lab/src/constant/asset_constant.dart';
 import 'package:travel_ui_200lab/src/helpers/image_helper.dart';
 import 'package:travel_ui_200lab/src/helpers/local_storage_helper.dart';
-import 'package:travel_ui_200lab/src/screens/home_screen.dart';
+import 'package:travel_ui_200lab/src/screens/bottom_bar.dart';
 import 'package:travel_ui_200lab/src/screens/onboarding_scren.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -29,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
         LocalStoragehelper.getVaue('ignoreOnboardingScreen') as bool?;
     if (ignoreOnboardingScreen != null && ignoreOnboardingScreen) {
       Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => const HomeScreen()));
+          .push(MaterialPageRoute(builder: (context) => const BottomBar()));
     } else {
       LocalStoragehelper.setValue('ignoreOnboardingScreen', true);
       Navigator.of(context).push(
