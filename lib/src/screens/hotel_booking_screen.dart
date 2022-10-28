@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:travel_ui_200lab/src/constant/asset_constant.dart';
 import 'package:travel_ui_200lab/src/constant/dimension_constant.dart';
 import 'package:travel_ui_200lab/src/helpers/image_helper.dart';
+import 'package:travel_ui_200lab/src/screens/guest_room_screen.dart';
 import 'package:travel_ui_200lab/src/screens/select_date_screen.dart';
 import 'package:travel_ui_200lab/widgets/app_bar_container.dart';
 import 'package:travel_ui_200lab/widgets/button_widget.dart';
@@ -59,7 +60,10 @@ class _HotelBookingScreenState extends State<HotelBookingScreen> {
                 ),
                 const SizedBox(height: kMediumPadding),
                 CardItem(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const GuestAndRoomScreen()));
+                    },
                     icon: ImageHelper.loadFormAsset(iconBed),
                     description: '2 Guest, 1 Room',
                     title: 'Guest And Room'),
