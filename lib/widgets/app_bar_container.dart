@@ -27,7 +27,7 @@ class AppBarContainer extends StatelessWidget {
       body: Stack(
         children: [
           SizedBox(
-            height: 220,
+            height: 210,
             child: AppBar(
               title: Container(
                 margin: const EdgeInsets.only(top: 30),

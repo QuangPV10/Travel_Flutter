@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:travel_ui_200lab/src/constant/asset_constant.dart';
 import 'package:travel_ui_200lab/src/constant/dimension_constant.dart';
 import 'package:travel_ui_200lab/src/helpers/image_helper.dart';
-import 'package:travel_ui_200lab/src/screens/hotel_screen.dart';
+import 'package:travel_ui_200lab/src/screens/hotel_booking_screen.dart';
 import 'package:travel_ui_200lab/widgets/app_bar_container.dart';
 import 'package:travel_ui_200lab/widgets/category_item.dart';
 
@@ -79,7 +79,8 @@ class HomeScreen extends StatelessWidget {
                     child: CategoryItem(
                         onTap: () => Navigator.of(context).push(
                             MaterialPageRoute(
-                                builder: (context) => const HotelScreen())),
+                                builder: (context) =>
+                                    const HotelBookingScreen())),
                         color: const Color(0xfffe9c5e),
                         icon: ImageHelper.loadFormAsset(iconHotel),
                         title: 'Hotels'),
