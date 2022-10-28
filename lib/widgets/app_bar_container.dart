@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:travel_ui_200lab/src/constant/asset_constant.dart';
 import 'package:travel_ui_200lab/src/constant/dimension_constant.dart';
+import 'package:travel_ui_200lab/src/constant/text_style_constant.dart';
 import 'package:travel_ui_200lab/src/helpers/image_helper.dart';
 
 import '../src/constant/color_constant.dart';
@@ -12,13 +13,15 @@ class AppBarContainer extends StatelessWidget {
   final bool? impLeading;
   final bool? impTrailing;
   final String? titleString;
+  final String? subTitleString;
   const AppBarContainer(
       {this.title,
       Key? key,
       required this.child,
       this.impLeading,
       this.impTrailing,
-      this.titleString})
+      this.titleString,
+      this.subTitleString})
       : super(key: key);
 
   @override
@@ -35,16 +38,19 @@ class AppBarContainer extends StatelessWidget {
                     Row(
                       children: [
                         if (impLeading!)
-                          Container(
-                            padding: const EdgeInsets.all(kItemPadding),
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius:
-                                    BorderRadius.circular(kDefaultPadding)),
-                            child: const Icon(
-                              FontAwesomeIcons.arrowLeft,
-                              color: Colors.black,
-                              size: kDefaultIconSize,
+                          GestureDetector(
+                            onTap: () => Navigator.of(context).pop(),
+                            child: Container(
+                              padding: const EdgeInsets.all(kItemPadding),
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius:
+                                      BorderRadius.circular(kDefaultPadding)),
+                              child: const Icon(
+                                FontAwesomeIcons.arrowLeft,
+                                color: Colors.black,
+                                size: kDefaultIconSize,
+                              ),
                             ),
                           ),
                         Expanded(
@@ -55,7 +61,17 @@ class AppBarContainer extends StatelessWidget {
                                 titleString ?? '',
                                 style: const TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 22),
-                              )
+                              ),
+                              if (subTitleString != null)
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: kMediumPadding),
+                                  child: Text(
+                                    subTitleString!,
+                                    style: TextStyles.defaultStyle.fontCaption
+                                        .whiteTextColor,
+                                  ),
+                                ),
                             ],
                           ),
                         )),
