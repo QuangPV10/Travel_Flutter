@@ -6,6 +6,7 @@ import 'package:travel_ui_200lab/src/constant/dimension_constant.dart';
 import 'package:travel_ui_200lab/src/constant/text_style_constant.dart';
 import 'package:travel_ui_200lab/src/helpers/image_helper.dart';
 import 'package:travel_ui_200lab/src/models/hotel.dart';
+import 'package:travel_ui_200lab/src/screens/select_room_screen.dart';
 import 'package:travel_ui_200lab/widgets/button_widget.dart';
 import 'package:travel_ui_200lab/widgets/dash_line.dart';
 import 'package:travel_ui_200lab/widgets/item_hotel_utility.dart';
@@ -181,7 +182,12 @@ class _HotelDetailScreenState extends State<HotelDetailScreen> {
                     const SizedBox(height: kDefaultPadding),
                     ImageHelper.loadFormAsset(imageMap, fit: BoxFit.fitWidth),
                     const SizedBox(height: kDefaultPadding),
-                    ButtonWidget(text: 'Select Room', onTap: () {})
+                    ButtonWidget(
+                        text: 'Select Room',
+                        onTap: () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const SelectRoomScreen())))
                   ],
                 ))
               ]),

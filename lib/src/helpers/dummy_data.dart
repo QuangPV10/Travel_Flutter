@@ -1,6 +1,8 @@
 import 'package:travel_ui_200lab/src/constant/asset_constant.dart';
 import 'package:travel_ui_200lab/src/models/hotel.dart';
 
+import '../models/room.dart';
+
 final List<HotelModel> listHotel = [
   HotelModel(
     hotelImage: hotel1Img,
@@ -28,6 +30,30 @@ final List<HotelModel> listHotel = [
     star: 3.8,
     numberOfReview: 1234,
     price: 132,
+  ),
+];
+
+final List<RoomModel> listRoom = [
+  RoomModel(
+    roomImage: room1Img,
+    roomName: 'Deluxe Room',
+    size: 27,
+    utility: 'Free Cancellation',
+    price: 245,
+  ),
+  RoomModel(
+    roomImage: room2Img,
+    roomName: 'Executive Suite',
+    size: 32,
+    utility: 'Non-refundable',
+    price: 289,
+  ),
+  RoomModel(
+    roomImage: room3Img,
+    roomName: 'King Bed Only Room',
+    size: 24,
+    utility: 'Non-refundable',
+    price: 214,
   ),
 ];
 
