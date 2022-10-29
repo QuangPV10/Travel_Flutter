@@ -45,7 +45,7 @@ class ItemHotel extends StatelessWidget {
               ),
               Text(
                 hotelModel.hotelName,
-                style: const TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyles.defaultStyle.fontHeader.bold,
               ),
               const SizedBox(height: kDefaultPadding),
               Row(
@@ -104,10 +104,11 @@ class ItemHotel extends StatelessWidget {
                   Expanded(
                       child: ButtonWidget(
                           text: 'Book A Room',
-                          onTap: () => Navigator.of(context).push(
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      const HotelDetailScreen()))))
+                          onTap: () =>
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => HotelDetailScreen(
+                                        hotelModel: hotelModel,
+                                      )))))
                 ],
               )
             ]),

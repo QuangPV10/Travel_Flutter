@@ -30,3 +30,10 @@ final List<HotelModel> listHotel = [
     price: 132,
   ),
 ];
+
+const List<Map<String, String>> listUtilityHotel = [
+  {'icon': iconWifi, 'name': 'Free\nWifi'},
+  {'icon': iconNonRefund, 'name': 'Non-\nRefundable'},
+  {'icon': iconBreakfast, 'name': 'Free-\nBreakfast'},
+  {'icon': iconNonSmoke, 'name': 'Non-\nSmoking'},
+];

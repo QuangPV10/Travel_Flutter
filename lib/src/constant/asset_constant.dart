@@ -20,7 +20,7 @@ const String turkeyImg = '${imagePath}turkey.png';
 
 const String iconPath = 'assets/icons/';
 const String iconBed = '${iconPath}ico_bed.png';
-const String iconBreakfast = '${iconPath}breakfast.png';
+const String iconBreakfast = '${iconPath}ico_breakfast.png';
 const String iconCalendal = '${iconPath}ico_calendal.png';
 const String iconDecre = '${iconPath}ico_decre.png';
 const String iconGuest = '${iconPath}ico_guest.png';
