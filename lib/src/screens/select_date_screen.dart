@@ -48,6 +48,7 @@ class SelectDateScreen extends StatelessWidget {
               }),
           const SizedBox(height: kDefaultPadding),
           ButtonWidget(
+              opacity: ColorPalette.primaryColor.withOpacity(0.3),
               text: 'Cancel',
               onTap: () =>
                   Navigator.of(context).pop([rangeStartDate, rangeEndDate])),

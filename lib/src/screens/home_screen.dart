@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:travel_ui_200lab/src/constant/asset_constant.dart';
 import 'package:travel_ui_200lab/src/constant/dimension_constant.dart';
+import 'package:travel_ui_200lab/src/constant/text_style_constant.dart';
+import 'package:travel_ui_200lab/src/helpers/dummy_data.dart';
 import 'package:travel_ui_200lab/src/helpers/image_helper.dart';
 import 'package:travel_ui_200lab/src/screens/hotel_booking_screen.dart';
 import 'package:travel_ui_200lab/widgets/app_bar_container.dart';
@@ -9,6 +11,64 @@ import 'package:travel_ui_200lab/widgets/category_item.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
+
+  Widget _buidlImageHomScreen(String name, String image) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: kDefaultPadding),
+      child: Stack(
+        alignment: Alignment.topRight,
+        children: [
+          ImageHelper.loadFormAsset(
+            image,
+            width: double.infinity,
+            fit: BoxFit.fitWidth,
+            radius: BorderRadius.circular(kItemPadding),
+          ),
+          const Padding(
+            padding: EdgeInsets.all(kDefaultPadding),
+            child: Icon(
+              Icons.favorite,
+              color: Colors.red,
+            ),
+          ),
+          Positioned(
+            left: kDefaultPadding,
+            bottom: kDefaultPadding,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  name,
+                  style: TextStyles.defaultStyle.whiteTextColor.bold,
+                ),
+                const SizedBox(height: kItemPadding),
+                Container(
+                  padding: const EdgeInsets.all(kMinPadding),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(kMinPadding),
+                    color: Colors.white.withOpacity(0.4),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: const [
+                      Icon(
+                        Icons.star,
+                        color: Color(0xffFFC107),
+                      ),
+                      SizedBox(
+                        width: kItemPadding,
+                      ),
+                      Text('4.5')
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -102,7 +162,55 @@ class HomeScreen extends StatelessWidget {
                         title: 'All'),
                   ),
                 ],
-              )
+              ),
+              const SizedBox(height: kMediumPadding),
+              Row(
+                children: [
+                  Text(
+                    'Popular Destinations',
+                    style: TextStyles.defaultStyle.bold,
+                  ),
+                  const Spacer(),
+                  Text(
+                    'See All',
+                    style: TextStyles.defaultStyle.bold.primaryTextColor,
+                  ),
+                ],
+              ),
+              const SizedBox(height: kMediumPadding),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Column(
+                          children: listImageLeft
+                              .map(
+                                (e) => _buidlImageHomScreen(
+                                  e['name']!,
+                                  e['image']!,
+                                ),
+                              )
+                              .toList(),
+                        ),
+                      ),
+                      const SizedBox(width: kDefaultPadding),
+                      Expanded(
+                        child: Column(
+                          children: listImageRight
+                              .map(
+                                (e) => _buidlImageHomScreen(
+                                  e['name']!,
+                                  e['image']!,
+                                ),
+                              )
+                              .toList(),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           )),
     );

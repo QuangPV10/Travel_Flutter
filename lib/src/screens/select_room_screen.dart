@@ -20,7 +20,9 @@ class SelectRoomScreen extends StatelessWidget {
                 .map((roomModel) => ItemRoom(
                       roomModel: roomModel,
                       onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const CheckoutScreen())),
+                          builder: (context) => CheckoutScreen(
+                                roomModel: roomModel,
+                              ))),
                     ))
                 .toList()),
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_ui_200lab/src/constant/asset_constant.dart';
+import 'package:travel_ui_200lab/src/constant/color_constant.dart';
 import 'package:travel_ui_200lab/src/constant/dimension_constant.dart';
 import 'package:travel_ui_200lab/widgets/app_bar_container.dart';
 import 'package:travel_ui_200lab/widgets/button_widget.dart';
@@ -31,7 +32,9 @@ class _GuestAndRoomScreenState extends State<GuestAndRoomScreen> {
                 text: 'Select', onTap: () => Navigator.of(context).pop()),
             const SizedBox(height: kMediumPadding),
             ButtonWidget(
-                text: 'Cancel', onTap: () => Navigator.of(context).pop())
+                opacity: ColorPalette.primaryColor.withOpacity(0.3),
+                text: 'Cancel',
+                onTap: () => Navigator.of(context).pop())
           ],
         ),
       ),

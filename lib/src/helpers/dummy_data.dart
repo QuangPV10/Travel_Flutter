@@ -3,6 +3,27 @@ import 'package:travel_ui_200lab/src/models/hotel.dart';
 
 import '../models/room.dart';
 
+final List<Map<String, String>> listImageLeft = [
+  {
+    'name': 'Korea',
+    'image': koreanImg,
+  },
+  {
+    'name': 'Dubai',
+    'image': dubaiImg,
+  },
+];
+final List<Map<String, String>> listImageRight = [
+  {
+    'name': 'Turkey',
+    'image': turkeyImg,
+  },
+  {
+    'name': 'Japan',
+    'image': japanImg,
+  },
+];
+
 final List<HotelModel> listHotel = [
   HotelModel(
     hotelImage: hotel1Img,
