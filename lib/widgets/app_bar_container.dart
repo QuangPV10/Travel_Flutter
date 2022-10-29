@@ -83,7 +83,7 @@ class AppBarContainer extends StatelessWidget {
                                 borderRadius:
                                     BorderRadius.circular(kDefaultPadding)),
                             child: const Icon(
-                              FontAwesomeIcons.arrowLeft,
+                              FontAwesomeIcons.bars,
                               color: Colors.black,
                               size: kDefaultIconSize,
                             ),
@@ -115,7 +115,7 @@ class AppBarContainer extends StatelessWidget {
             ),
           ),
           Container(
-            margin: const EdgeInsets.only(top: 190),
+            margin: const EdgeInsets.only(top: 180),
             padding: const EdgeInsets.symmetric(horizontal: kMediumPadding),
             child: child,
           )
